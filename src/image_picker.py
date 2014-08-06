@@ -19,12 +19,13 @@ Noah Spurrier 2007
 #TODO: use states
 
 import Tkinter
-import Image, ImageTk
+from PIL import Image, ImageTk
 import newseriesdialog
 import tkFileDialog
 import tkMessageBox
 import os
 import picture_data_picker
+from os.path import expanduser
 
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg, NavigationToolbar2TkAgg
 from matplotlib.figure import Figure
@@ -41,7 +42,9 @@ class ImagePicker(object):
     
     def __init__(self,fname = None):
         self.f = fname
-        self.settingsfname = os.path.join(os.environ['HOME'], ".picker_settings.cfg")
+        
+        homedir = expanduser("~")
+        self.settingsfname = os.path.join(homedir, ".picker_settings.cfg")
         #todo use ConfigParser
         if os.path.exists(self.settingsfname):
             try:
@@ -50,19 +53,19 @@ class ImagePicker(object):
                 if os.path.exists(searchdir):
                     self.searchdir = searchdir
                 else:
-                    self.searchdir  = os.environ['HOME']
+                    self.searchdir  = homedir
                 writedir = setfile.readline().strip()
                 if os.path.exists(searchdir):
                     self.writedir = writedir
                 else:
-                    self.writedir   = os.environ['HOME']
+                    self.writedir   = homedir
             except:
                 pass
             setfile.close()
              
         else:
-            self.searchdir  = os.environ['HOME']
-            self.writedir   = os.environ['HOME']
+            self.searchdir  = homedir
+            self.writedir   = homedir
             
         self.next_is_error = 0
         
