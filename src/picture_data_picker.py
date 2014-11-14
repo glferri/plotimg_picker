@@ -21,12 +21,12 @@ along with Nome-Programma.  If not, see <http://www.gnu.org/licenses/>.
 '''
 Created on 14/feb/2011
 
-@author: subbuglio
+@author: Gianluca Ferri
 '''
 
 class PictureDataPicker(object):
     '''
-    Pick data from plots picking them and transforming value
+    Pick data from plots clicking on them and transforming value according to axes
     '''
 
 

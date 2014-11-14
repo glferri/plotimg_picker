@@ -451,6 +451,7 @@ class ImagePicker(object):
             setfile = open(self.settingsfname,'w')
             setfile.write(self.searchdir + "\n")
             setfile.write(self.writedir + "\n")
+            self.root.destroy()
             self.root.quit()    
     
     def addSeries(self):
