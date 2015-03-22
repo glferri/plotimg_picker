@@ -9,7 +9,7 @@ it under the terms of the GNU General Public License as published by
 the Free Software Foundation, either version 3 of the License, or
 (at your option) any later version.
 
-Nome-Programma is distributed in the hope that it will be useful,
+plotimg_picker is distributed in the hope that it will be useful,
 but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 GNU General Public License for more details.
@@ -51,7 +51,7 @@ from matplotlib.figure import Figure
 
 
 STARTING_VAL = -1
-IMSCALE = 0.7
+IMSCALE = 1.
 imgrows = 70
 #todo:make these relative to system
 maxheight = 600
@@ -90,12 +90,12 @@ class ImagePicker(object):
         
         self.x0 = STARTING_VAL
         self.x1 = STARTING_VAL
-        self.xdelta = 7.
-        self.x0val = 1.
+        self.xdelta = 1.
+        self.x0val = 0.
         
         self.y0 = STARTING_VAL
         self.y1 = STARTING_VAL
-        self.ydelta = 5.
+        self.ydelta = 1.
         self.y0val = 0.
 
         self.series = {}  
